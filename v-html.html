@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div>{{message}}</div>
+			<div v-html="message"></div>
+		</div>
+		<span>Message is: {{message1}}</span>
+<br>
+<input type="text" v-on:input ="inputFunc" placeholder="edit me">
+		
+	</body>
+	<script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				message:"adasd",
+				message1:"qwe"
+			},
+			method:{
+				inputFunc:function(){
+					this.message="asd"
+				}
+			}
+		})
+	</script>
+</html>
