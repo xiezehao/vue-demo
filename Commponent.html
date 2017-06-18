@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<my></my>
+			<qwe></qwe>
+		</div>
+		<script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
+		<script>
+			Vue.component("my",{
+				template:"<div>132465798</div>"
+			})
+			var qwe={
+				template:"<p>asd</p>"
+			}
+			new Vue({
+				el:"#app",
+				components:{
+					"qwe":qwe
+				}
+			})
+		</script>
+	</body>
+</html>

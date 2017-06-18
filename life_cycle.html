@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<a href="https://www.hao123.com/">123</a>
+		</div>
+		<script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					
+				},
+				beforeCreate:function(){
+					console.log("beforeCreate");
+				},
+				created:function(){
+					console.log("created");
+				},
+				
+				beforeMount:function(){
+					console.log("beforeMount");
+				},
+				mounted:function(){
+					console.log("mounted");
+				},
+				beforeDestroy:function(){
+					console.log("beforeDestroy");
+				},
+				destroyed:function(){
+					console.log("destroyed");
+				},
+				beforeUpdate:function(){
+					console.log("beforeUpdate");
+				},
+				updated:function(){
+					console.log("updated");
+				}
+			})
+		</script>
+	</body>
+</html>

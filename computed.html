@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="example">
+		  <p>Original message: "{{ message }}"</p>
+		  <p>Computed reversed message: "{{ reversedMessage }}"</p>
+		  <p>{{ message.split('').reverse().join('') }}</p>
+		  <p>{{qwe()}}</p>
+		</div>
+		<script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
+		<script>
+			var vm = new Vue({
+			  el: '#example',
+			  data: {
+			    message: 'Hello'
+			  },
+			  computed: {
+			    // a computed getter
+			    reversedMessage: function () {
+			      // `this` points to the vm instance
+			      return this.message.split('').reverse().join('')
+			    }
+			  },
+			  methods:{
+			  	qwe:function(){
+//			  		this.message=Date.now();
+			  		return this.message.split('').reverse().join('')
+			  	}
+			  }
+			})
+			
+//			console.log(vm.reversedMessage) // -> 'olleH'
+//			vm.message = 'Goodbye'
+//			console.log(vm.reversedMessage) // -> 'eybdooG'
+		</script>
+	</body>
+</html>

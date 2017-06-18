@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.a{
+				font-size: 45px;
+			}
+			.b{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="app">
+			<div v-bind:class="{a:aa,b:bb}">132</div>
+			<button @click="qwe" value="456">456</button>
+			<div v-bind:class="classObject">132</div>
+			<button @click="asd" value="456">789</button>
+		</div>
+		
+		<script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
+		<script>
+			new Vue({
+				el:".app",
+				data:{
+					aa:true,
+					bb:false,
+					classObject:{
+						a:true,
+						b:false
+					}
+				},
+				methods:{
+					qwe:function(){
+						this.bb=!this.bb;
+					},
+					asd:function(){
+						this.classObject.a=false;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

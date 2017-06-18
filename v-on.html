@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<button v-on:click="{{counter++}}">增加1</button>
+			<p>{{counter}}</p>
+			<button @click="aa">qwe</button>
+			<br />
+			<button @click="bb(789)">789</button>
+			<br />
+			<button @click.once="{{counter++}}">只增加1</button>
+			<button @click="cc">qwe</button>
+			<input @keyup.enter="cc"/>
+		</div>
+		<script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					counter:0
+				},
+				methods:{
+					aa:function(){
+						alert(123)
+					},
+					bb:function(msg){
+						alert(msg)
+					},
+					cc:function(){Vue.config.keyCodes.f1=112;
+						alert(Vue.config.keyCodes.f1)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

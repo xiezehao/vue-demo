@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title><script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
+	</head>
+	
+	<body>
+		<div class="app">
+			<div>
+				<h1 v-if="ok">YES</h1>
+				<h1 v-else>No</h1>
+				<button @click="qwe">123456</button>
+			</div>
+			
+			
+		</div>
+		<script>
+			new Vue({
+				el:".app",
+				data:{
+					ok:false
+				},
+				methods:{
+					qwe:function(){
+						this.ok=!this.ok
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
