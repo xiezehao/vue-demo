@@ -6,23 +6,47 @@
 	</head>
 	<body>
 		<div id="app">
-			<my></my>
+			<my title="asd"></my>
 			<qwe></qwe>
+			<asd></asd>
+			<asd></asd>
+			<input v-model="message" />
+			<child :qwemessage="message"></child>
 		</div>
 		<script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
 		<script>
 			Vue.component("my",{
-				template:"<div>132465798</div>"
+				props:["title"],
+				template:"<div>{{title}}</div>"
+				
 			})
 			var qwe={
 				template:"<p>asd</p>"
 			}
+			var data={counter:0}
+			Vue.component("asd",{
+				template:"<button @click='counter++'>{{counter}}</button>",
+				data:function(){
+					return {
+						counter:0
+					}
+				}
+			})
+			Vue.component("child",{
+				data:{
+					message:""
+				},
+				props:["qwemessage"],
+				template:"<span>{{message}}</span>"
+				
+			})
 			new Vue({
 				el:"#app",
 				components:{
 					"qwe":qwe
 				}
 			})
+			
 		</script>
 	</body>
 </html>

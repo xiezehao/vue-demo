@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			{{message|qwe}}
+		</div>
+		<script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					message:"123"
+				},
+				filters:{
+					qwe(value){
+						return "i want to "+value;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

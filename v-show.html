@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<h1>23456</h1>
+			<h1 v-show="yes">yes</h1>
+			<h1 v-show="no">no</h1>
+			<h1 v-show="age<25">age</h1>
+			
+		</div>
+		
+		<script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
+		<script>
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					yes:true,
+					no:false,
+					age:28,
+					name:'keepfoot'
+				}
+			})
+		</script>
+	</body>
+</html>

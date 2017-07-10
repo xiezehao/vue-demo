@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div>
+				<label>name:</label>
+				<input type="text" id="name" v-model="newPeople.name"/>
+				<br />
+				<label>sex:</label>
+				<input type="text" id="sex" v-model="newPeople.sex"/>
+				<br />
+				<label>age:</label>
+				<input type="text" id="age" v-model="newPeople.age"/>
+				<br />
+				<button @click="add()">添加</button>
+			</div>
+			<div>
+				<table>
+					<thead>
+						<td>name</td>
+						<td>sex</td>
+						<td>age</td>
+						<td>删除</td>
+					</thead>
+					<tbody v-for="(item,index) in people">
+						<td>{{item.name}}</td>
+						<td>{{item.sex}}</td>
+						<td>{{item.age}}</td>
+						<td><button @click="delect(index)">删除</button></td>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
+		
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					newPeople:{
+						name:"",
+						sex:'',
+						age:''
+					},
+					people:[
+					{
+						name:"13",
+						sex:'man',
+						age:'12'
+					},
+					{
+						name:"34",
+						sex:'man',
+						age:'78'
+					},
+					{
+						name:"78",
+						sex:'women',
+						age:'33'
+					},
+					{
+						name:"96",
+						sex:'man',
+						age:'44'
+					},
+					{
+						name:"555",
+						sex:'man',
+						age:'1'
+					},
+					]
+				},
+				methods:{
+					add:function(){
+						if(this.newPeople.name==""||this.newPeople.sex==""||this.newPeople.age==""){
+							alert("SB");
+							
+						}else{
+							this.people.push(this.newPeople);
+						this.newPeople={name:"",age:"",sex:""};
+						}
+						
+					},
+					delect:function(index){
+						this.people.splice(index,1);
+					}
+				}
+			})
+		</script>
+		
+	</body>
+</html>
